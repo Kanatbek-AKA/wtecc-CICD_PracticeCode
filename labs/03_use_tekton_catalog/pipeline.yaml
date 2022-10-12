@@ -9,12 +9,15 @@ spec:
       default: "master"
   tasks:
     - name: clone
+    workspaces:
+      name: output
+      workspace: pipeline-workspace
       taskRef:
-        name: checkout
+        name: git-clone
       params:
-      - name: repo-url
+      - name: url
         value: "$(params.repo-url)"
-      - name: branch
+      - name: revision
         value: "$(params.branch)"
 
     - name: lint
