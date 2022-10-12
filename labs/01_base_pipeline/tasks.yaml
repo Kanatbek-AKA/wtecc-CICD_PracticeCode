@@ -1,6 +1,10 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: <place-name-here>
+  name: lint
 spec:
   steps:
+   - name: test
+     image: bitname/git-latest
+     command: [git]
+     args: ["clone"]
