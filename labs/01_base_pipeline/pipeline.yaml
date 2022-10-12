@@ -1,6 +1,9 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:  
-  name: <place-name-here>
+  name: pylint
 spec:
   tasks:
+   - name: clone
+     taskRef:
+       name: lint
